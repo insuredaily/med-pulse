@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedPulse - Healthcare & Technology Intelligence</title>
+    <meta name="description" content="The portal for clinical medicine updates, telehealth developments, wearable health technology, and genomic research breakthroughs.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Header & Brand Bar -->
+    <header id="site-header">
+        <div class="header-container">
+            <div id="brand-logo" class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>MedPulse</span>
+            </div>
+            
+            <nav id="main-nav">
+                <div class="nav-links">
+                    <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="#" id="bookmark-nav"><i class="fa-solid fa-bookmark"></i> Bookmarks (<span id="bookmark-count">0</span>)</a>
+                    <a href="#" id="rss-nav"><i class="fa-solid fa-rss"></i> RSS Feeds</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Ticker -->
+    <div id="news-ticker">
+        <div class="ticker-label">LIVE UPDATE</div>
+        <div class="ticker-track">
+            <div class="ticker-content" id="ticker-content-list">
+                <!-- Ticker items dynamically written -->
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Main Columns Grid -->
+        <div class="feed-layout">
+            <!-- Left Column (Swaps between News Feed and Article Detail View) -->
+            <section class="news-column">
+                
+<div class="static-page-card" style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 40px; box-shadow: var(--box-shadow); transition: border-color var(--transition-speed);">
+    <h1 style="font-size: 32px; margin-bottom: 20px; font-family: var(--font-heading); color: var(--text-color);">About MedPulse</h1>
+    <div style="font-size: 16px; line-height: 1.8; color: var(--text-color);">
+        <p>Welcome to <strong>MedPulse</strong>, a premium news indexing platform and industry resource aggregator. Our mission is to compile, synthesize, and deliver actionable information, compliance updates, and analytical insights in this sector.</p>
+        <p><em>The portal for clinical medicine updates, telehealth developments, wearable health technology, and genomic research breakthroughs.</em></p>
+        
+        <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px; font-family: var(--font-heading); color: var(--text-color);">Our Vision</h3>
+        <p>In a fast-paced environment where crucial industry shifts happen daily, staying informed is not just an advantage—it is a necessity. MedPulse parses complex updates, real-time syndication feeds, and emerging developments into a clean, unified workspace optimized for professionals and enthusiasts alike.</p>
+        
+        <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px; font-family: var(--font-heading); color: var(--text-color);">Platform Architecture</h3>
+        <p>We leverage advanced client-side technologies to deliver a high-performance experience with minimal server latency. By integrating real-time RSS processing with customizable tools, we provide immediate value without compromising privacy or performance.</p>
+        
+        <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px; font-family: var(--font-heading); color: var(--text-color);">Editorial Standard</h3>
+        <p>While our automated indexers continuously monitor verified RSS feeds across the industry, our team selects featured insights based on relevance, accuracy, and utility. We maintain strict integrity across all categorized segments to ensure our readers receive high-quality information.</p>
+    </div>
+</div>
+
+            </section>
+
+            <!-- Sidebar Widgets Column (Permanently visible alongside both feed list and detail views!) -->
+            <aside class="sidebar-column">
+                <!-- Ad Spot 1 -->
+                <div class="ad-unit glow-card" id="ad-unit-1">
+                    <div class="ad-badge">SPONSORED PROMOTION</div>
+                    <div class="ad-content">
+                        <h4>On-Demand Telehealth</h4>
+                        <p>Speak with a board-certified physician online in 10 minutes. Covered by most insurance plans.</p>
+                        <button class="ad-cta-btn">Book Consult <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </div>
+                </div>
+
+                <!-- Interactive Niche Widget -->
+                <div class="sidebar-widget interactive-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3>Symptom Navigator & Copay Estimator</h3>
+                    </div>
+                    <div class="widget-body">
+                        <p class="widget-desc">Analyze symptoms and estimate consultation costs based on your insurance plan.</p>
+                        <form id="widget-calc-form" onsubmit="return false;">
+                            
+            <div class="calc-group">
+                <label for="symptom-cat">Primary Symptom Category</label>
+                <select id="symptom-cat">
+                    <option value="cold">Common Cold / Congestion / Sore Throat</option>
+                    <option value="skin">Skin Irritation / Rash / Burn</option>
+                    <option value="joint">Joint Pain / Muscle Strain</option>
+                    <option value="chronic">Chronic Health Mgmt (Diabetes, Blood Pressure)</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <label for="insurance-tier">Insurance Plan Tier</label>
+                <select id="insurance-tier">
+                    <option value="standard">Standard / Basic Plan</option>
+                    <option value="gold">Gold / Premium Plan</option>
+                    <option value="none">No Insurance / Self-Pay</option>
+                </select>
+            </div>
+            <button class="calc-btn" id="run-calc">Navigate Care</button>
+        
+                        </form>
+                        <div id="calc-results" class="calc-results"></div>
+                    </div>
+                </div>
+
+                <!-- Ad Spot 2 -->
+                <div class="ad-unit" id="ad-unit-2">
+                    <div class="ad-badge">SPONSORED PROMOTION</div>
+                    <div class="ad-content">
+                        <h4>Continuous Health Monitors</h4>
+                        <p>Track heart rate variability, oxygen levels, and metabolic trends in real time. $50 discount inside.</p>
+                        <button class="ad-cta-btn secondary-ad-btn">Buy Monitor</button>
+                    </div>
+                </div>
+
+                <!-- Live RSS Feeds Panel -->
+                <div class="sidebar-widget rss-sources-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-rss"></i>
+                        <h3>Live RSS Aggregation</h3>
+                    </div>
+                    <div class="widget-body">
+                        <p class="widget-desc">Fetch and parse real-time industry articles directly into this workspace.</p>
+                        <div class="rss-source-buttons">
+                            <button class="rss-load-btn" data-url="https://www.healthcareitnews.com/rss/feed" data-name="Healthcare IT News">
+                                <i class="fa-solid fa-cloud-arrow-down"></i> Load Healthcare IT News
+                            </button>
+                            <div class="custom-rss-input">
+                                <input type="url" id="custom-rss-url" placeholder="https://example.com/rss.xml">
+                                <button id="load-custom-rss">Load</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Newsletter Subscription -->
+                <div class="sidebar-widget newsletter-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <h3>Intel Briefing Signup</h3>
+                    </div>
+                    <div class="widget-body" id="newsletter-form-container">
+                        <p class="widget-desc">Join 18,400+ professionals. Delivered twice weekly. Zero spam.</p>
+                        <form id="newsletter-form" onsubmit="return false;">
+                            <input type="email" id="news-email" placeholder="Enter your business email" required>
+                            <button type="submit" id="newsletter-submit">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <div class="footer-container">
+            <div class="footer-branding">
+                <div class="logo">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>MedPulse</span>
+                </div>
+                <p>High-performance niche news indexing and analytics workspace.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Information</h5>
+                <a href="about.html">About Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MedPulse. Designed for optimized ad yield. Simulated demonstration project.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
